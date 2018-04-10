@@ -68,7 +68,6 @@ function createuser() {
                 console.log(errorMessage);
             }).then(function () {
                 var user = firebase.auth().currentUser;
-                console.log(user);
                 user.updateProfile({
                     displayName: username.toString(),
                 }).then(function () {
