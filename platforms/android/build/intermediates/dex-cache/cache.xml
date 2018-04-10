@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\exploded-aar\com.android.support\support-core-ui\26.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="508f50705b4fde51a16259f29c854201a3044516">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-26.1.0_e9996b2cbecee2981ffddddbc3c5db1bf9ed1253.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\exploded-aar\com.onesignal\OneSignal\3.6.5\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="dfff80b6e21c10f40ec59c0e5d86d00bd67a1f35">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\com.onesignal-OneSignal-3.6.5_894d27ed0901d5ceba6ed150b635eef79323883e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\exploded-aar\com.android.support\support-fragment\26.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="7efef32744ca4a436492d5cf28c08698cc2af256">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-26.1.0_7bd7611d78a662a25689bdf6bb34ab69cbde2659.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\exploded-aar\com.android.support\support-media-compat\26.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="f97cf85b0fe70d37a705111dafa6b1b418ea1650">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-26.1.0_e78c4db2e0e1e7b3caad6fc37e8fcc6c5bf16212.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.1.0\814258103cf26a15fcc26ecce35f5b7d24b73f8\support-annotations-26.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="0814258103cf26a15fcc26ecce35f5b7d24b73f8">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\support-annotations-26.1.0_2a7259c20b348bedf8a0c0591626fdeb7e9dee79.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\.gradle\caches\modules-2\files-2.1\android.arch.lifecycle\common\1.0.0\e414a4cb28434e25c4f6aa71426eb20cf4874ae9\common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e414a4cb28434e25c4f6aa71426eb20cf4874ae9">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\common-1.0.0_3a058b33f1cf18c39cf82b61c9fade05d5b0b84b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\11.2.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="1d2ee92c55b107ec366ddb534edae4548201e25b">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-11.2.2_d9b7d3fbedc6ec4dfac2ab0a8c91905e34fc158f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\exploded-aar\com.android.support\customtabs\26.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e6fff1d276738bb82cfc131c49d2e72a47dfd0aa">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-customtabs-26.1.0_e77a4b51823447f3d1b133095695079f2bc6e83a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\11.2.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="73d3d4e86f3d6da0dd1987f7cff9fb07d5a36132">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-location-11.2.2_a9bdcf9427f5b9285490d12d2c06582bdb9f6692.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\11.2.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="7ed36108b22a98a311676b5ad153d1e3587fcd16">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-11.2.2_a182f09fcfce24d7d3fa4820880472c506a6bacd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\11.2.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="b35ff61463403c8aa7820fc2fa7caf6a29e31c2c">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-gcm-11.2.2_66402a1f99a87590daba54880cf659d040c88508.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\11.2.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="cf47665b22d68f560d1b8fa2e51b8c23a34574f2">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-11.2.2_9190515031b24307c100105f15015d87c13a2397.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\.gradle\caches\modules-2\files-2.1\android.arch.core\common\1.0.0\a2d487452376193fc8c103dd2b9bd5f2b1b44563\common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\common-1.0.0_e0d058ebaec28ce9416d084b778c1ac9e0d9c388.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\exploded-aar\org.apache.cordova\CordovaLib\6.3.0\debug\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="53d2966f0ad9d41e13d20b2458ca77a55aef3154">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-6.3.0-debug_5dc0652fa24915a240ec96fc55e333fd89f2a9af.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\exploded-aar\me.leolin\ShortcutBadger\1.1.19\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="696fe9ef08bac13982595ecfdd7a22a2c170a0cd">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\me.leolin-ShortcutBadger-1.1.19_dc4569377bf646181b506b46405a292df08976e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\libs\sqlite-connector.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="76169ab23a4f939925491c6fe186749da5a56ee9">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\sqlite-connector_64f1a4f1c8db152bfb22689eecb46753afb4c075.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\exploded-aar\android.arch.lifecycle\runtime\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="b62fdc4cfef174c1e456014195c83fa7de7dc041">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\android.arch.lifecycle-runtime-1.0.0_541a447850ede174b6cedb799b48e7f2612d9ebe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\exploded-aar\com.android.support\support-core-utils\26.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="233f60a165ae622c8b36731502ebbda0f65e1930">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-26.1.0_81e8b8101ca0f3776c382b9c2f9b569cf2f7b355.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\exploded-aar\com.android.support\support-compat\26.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2442771a5590dd4eb4bce00c2e9dca9e22e4c963">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-compat-26.1.0_aef8b795c2ca17e6e5a51a135be6b0483b6b3002.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\11.2.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a1c4ae24ce3c755b3ef7d79a343acfadfb0b097e">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-iid-11.2.2_d45d563221b2b147cdcb545a58a202a93c947b64.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\26.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\kui_b\Desktop\Pill Notifier\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-v4-26.1.0_811ff2db54fbc01f324d9520cbe4b5b103d7e05b.jar" />
+    </item>
+
+</items>

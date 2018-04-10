@@ -1,0 +1,56 @@
+{
+  "_from": "git+https://github.com/MobileChromeApps/cordova-plugin-chrome-apps-alarms.git",
+  "_id": "cordova-plugin-chrome-apps-alarms@1.3.4-dev",
+  "_inBundle": false,
+  "_integrity": "sha1-SWvpzBW3wd2RZJjcFMLOtgB1MX0=",
+  "_location": "/cordova-plugin-chrome-apps-alarms",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/MobileChromeApps/cordova-plugin-chrome-apps-alarms.git",
+    "rawSpec": "https://github.com/MobileChromeApps/cordova-plugin-chrome-apps-alarms.git",
+    "saveSpec": "git+https://github.com/MobileChromeApps/cordova-plugin-chrome-apps-alarms.git",
+    "fetchSpec": "https://github.com/MobileChromeApps/cordova-plugin-chrome-apps-alarms.git",
+    "gitCommittish": "master"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/MobileChromeApps/cordova-plugin-chrome-apps-alarms.git#dcfea89ae5279273455e0e35797cdf8a290c233e",
+  "_spec": "https://github.com/MobileChromeApps/cordova-plugin-chrome-apps-alarms.git",
+  "_where": "/Users/tawanrungthongsena/AndroidStudioProjects/SeniorProject",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/MobileChromeApps/cordova-plugin-chrome-apps-alarms/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-chrome-apps-alarms",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "This plugin allows apps to register alarms.",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "homepage": "https://github.com/MobileChromeApps/cordova-plugin-chrome-apps-alarms",
+  "keywords": [
+    "chrome",
+    "alarm",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "BSD",
+  "name": "cordova-plugin-chrome-apps-alarms",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MobileChromeApps/cordova-plugin-chrome-apps-alarms.git"
+  },
+  "version": "1.3.4-dev"
+}

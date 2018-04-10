@@ -1,0 +1,4 @@
+#Tue Apr 10 21:37:37 ICT 2018
+base.0=C\:\\Users\\kui_b\\Desktop\\Pill Notifier\\platforms\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=C\:\\Users\\kui_b\\Desktop\\Pill Notifier\\platforms\\android\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
