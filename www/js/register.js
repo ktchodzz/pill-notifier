@@ -3,7 +3,6 @@ var dataurl
 var register = false
 var upload = false
 
-
 $('#registerbtn').on('click', function () {
     $('#login').hide("slide", { direction: "left" }, 500, function () {
         $('#register').show()

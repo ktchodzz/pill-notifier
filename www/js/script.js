@@ -31,7 +31,7 @@ function onBackKeyDown() {
         $('#mainlayout').show()
     } else if ($('#register').is(':visible')) {
         $('#register').hide("slide", { direction: "right" }, 500, function () {
-            $('#login').show("fade");mainheader
+            $('#login').show("fade"); mainheader
             $('#mainheader').show("fade");
         });
     } else if ($('#forgetpass').is(':visible')) {
@@ -138,7 +138,7 @@ document.addEventListener('deviceready', function () {
         location: 'default'
     });
     console.log(db);
-    
+
     initlalarmtable()
     initalarmlist()
     initalert()
@@ -160,7 +160,18 @@ function initalarmlist() {
     db.executeSql('SELECT no AS no, name AS name, hour AS hour, minute AS minute, amount AS amount, time AS time, sound AS sound, active AS active FROM Alarm ORDER BY hour, minute, no', [],
         function (rs) {
             alarmlength = rs.rows.length
+            alarmArray = [];
             for (i = 0; i < alarmlength; i++) {
+                var alarmObj = new Object();
+                alarmObj.no = rs.rows.item(i).no;
+                alarmObj.name = rs.rows.item(i).name;
+                alarmObj.hour = rs.rows.item(i).hour;
+                alarmObj.minute = rs.rows.item(i).minute;
+                alarmObj.amount = rs.rows.item(i).amount;
+                alarmObj.time = rs.rows.item(i).time;
+                alarmObj.active = rs.rows.item(i).active;
+                alarmArray.push(alarmObj);
+
                 html = '<div id="' + rs.rows.item(i).no + '" class="alarmlist"><div class="info">'
                 html += '<h3>' + rs.rows.item(i).name + '</h3>'
                 html += '<p>' + rs.rows.item(i).hour + ':'
@@ -178,11 +189,19 @@ function initalarmlist() {
                 if (rs.rows.item(i).active == 'true')
                     initalarm(rs.rows.item(i).no)
             }
+
+            var user = firebase.auth().currentUser;
+            console.log(user);
+            if (user) {
+                firebase.database().ref().child('userprofile/' + user.displayName)
+                    .update({ alarmList: alarmArray });
+            }
+            // firebase.database().ref().child('userprofile/' + newPostKey)
+            //     .update({ alarmList: alarmArray });
         }, function (error) {
             console.log('SELECT SQL statement ERROR: ' + error.message);
         });
 }
-
 
 function initalarm(no) {
     db.executeSql('SELECT no AS no, name AS name, hour AS hour, minute AS minute, amount AS amount, time AS time, sound AS sound FROM Alarm WHERE no = ' + no, [],
@@ -402,7 +421,7 @@ function inituserprofile(displayName) {
         email = snapshot.child("email").val()
         dateofbirth = snapshot.child("dateofbirth").val()
         gender = snapshot.child("gender").val()
-        
+
         $('.myname').text(username)
         $('.myemail').text(email)
         $('.mydateofbirth').text(dateofbirth)
