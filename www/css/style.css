@@ -37,7 +37,8 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url(../images/bg.jpg) no-repeat;
+    /*background: url(../images/bg.jpg) no-repeat;  */
+    background-color: #d6ecfa;
     background-size: cover;
     background-attachment: fixed;
     overflow: auto;
@@ -48,49 +49,12 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url(../images/bg.jpg) no-repeat;
+    /*background: url(../images/bg.jpg) no-repeat; */
+    background-color: #d6ecfa;
     background-size: cover;
     background-attachment: fixed;
     overflow: auto;
 }
-
-#mainheader {
-    position: relative;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-}
-
-#bgquiz{
-    position: relative;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-}
-
-#home {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -123,11 +87,13 @@ html {
 }
 
 .user {
-    height: 48px;
+    height: 40px;
+    width: 42px;
 }
 
 .password {
-    width: 48px;
+    width: 42px;
+    height: 40px;
 }
 
 .inline {
@@ -180,82 +146,22 @@ a:hover {
     width: 80%;
     max-width: 276px;
     height: 65px;
-    color: rgb(255, 255, 255);
-    background-color: rgb(54, 222, 252);
+    color: #272625;
+    background-color: #F8F8FF;
     border-radius: 4px;
 }
 
-.bigbutton2 {
-    font-size: 25px;
-    border: none;
-    margin-top: 10%;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 40%;
-    height: 116px;
-    color: rgb(255, 255, 255);
-    background-color: rgb(63, 213, 17);
-    border-radius: 4px;
-    position: relative;
-}
-
-.bigbutton3 {
-    font-size: 20px;
-    border: none;
-    margin-top: 5%;
-    margin-bottom: 0%;
-    width: 80%;
-    max-width: 276px;
-    height: 65px;
-    color: rgb(255, 255, 255);
-    border-radius: 4px;
-}
-
-.bigbutton4 {
-    font-size: 20px;
-    border: none;
-    margin-top: 10px;
-    width: 46%;
-    color: rgb(255, 255, 255);
-    border-radius: 4px;
-    background: rgba(123, 121, 121, 0.32);
-    margin-left: 4px;
-    margin-right: 4px;
-    padding-top: 41%;
-}
-
-.bigbutton5 {
-    padding-top: 5px;
-    display: block;
-    font-size: 20px;
-    border: none;
-    color: rgb(255, 255, 255);
-    border-radius: 4px;
-    background: rgba(123, 121, 121, 0.32);
-}
-
-a.bigbutton5 {
-    text-align: center;
-    padding-top: 5px;
-    display: block;
-    font-size: 20px;
-    width: 46.39px;
-    border: none;
-    color: rgb(255, 255, 255);
-    border-radius: 4px;
-}
 
 .center * {
 	margin: auto;
 	display: block;
 }
 
-.margin-bottom-10 {
-    margin-bottom: 10px;
-}
-
-#test2q, #test8q, #test9q {
-    margin-top: 15%;
+#profilebtn {
+    background: url(../images/profile.png) no-repeat;
+    background-size: 26px;
+    background-position: center;
+    opacity: 0.5;
 }
 
 .registerinput {
@@ -283,61 +189,8 @@ a.bigbutton5 {
     outline: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.cbutton {
-    display: block;
-    width: 100%;
-    height: 34px;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #555;
-    background-color: green;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-}
-
-.cbuttonchoice {
-    display: inline-block;
-    height: 34px;
-    padding: 6px 0px;
-    margin-bottom: 10px;
-    width: 48%;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #555;
-    border-radius: 4px;
-    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-}
-
 .checkbox label {
     display: block;
-}
-
-.form-group input, 
-.form-group button {
-    max-width: 290px;
 }
 
 #test2q .back {
@@ -348,7 +201,7 @@ a.bigbutton5 {
 
 button {
     transition: all 10ms ease-in;
-    transform: scale(1);  
+    transform: scale(1);
 }
 
 .tab {
@@ -387,7 +240,8 @@ button {
     left: 0px;
     margin-bottom: 55px;
     overflow: auto;
-    background: url(../images/bg2.jpg) no-repeat;
+    /*background: url(../images/bg2.jpg) no-repeat;  */
+    background-color: #d6ecfa;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -396,9 +250,10 @@ button {
     position: fixed;
     height: 50px;
     top: 0px;
-    background: rgb(253, 174, 174);
+    background: #000080;
     right: 0px;
     left: 0px;
+    color : #F8F8FF;
     /* box-shadow: 0px -1px 8px black; */
 }
 
@@ -408,6 +263,7 @@ button {
     margin-left: 13px;
     margin-right: 13px;
     display: inline-block;
+    color : #F8F8FF;
 }
 
 .header-tab p.k {
@@ -430,186 +286,6 @@ button {
     display: inline-block;
 }
 
-.chatlist {
-    height: 69px;
-    border-bottom: 1px solid #5f5f5f;
-}
-
-.chatlist img {
-    height: 50px;
-    width: 50px;
-    margin-left: 13px;
-    margin-right: 13px;
-    margin-top: 6px;
-    display: inline-block;
-}
-
-.previewchat {
-    display: inline;
-}
-
-.previewchat h4 {
-    margin-top: 10px;
-    margin-bottom: 7px;
-    display: inline-block;
-    width: 55%;
-}
-
-.previewchat p.pull-right {
-    margin-top: 7px;
-    margin-right: 13px;
-    margin-bottom: 0px;
-    display: inline-block;
-    right: 0px;
-    position: absolute;
-}
-
-.previewchat .text {
-    height: 19px;
-    margin-right: 13px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 0px;
-    text-align: unset;
-    white-space: nowrap;
-    width: 55%;
-    display: inline-block;
-}
-
-.chat-input {
-    position: fixed;
-    height: 50px;
-    background: #dcff8a;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
-    border: none;
-}
-
-.chat-input input {
-    font-size: 20px;
-    height: 50px;
-    display: inline-block;
-    padding-left: 5px;
-    padding-right: 5px;
-    border: none;
-}
-
-.chat-input input:focus {
-    outline: none;
-}
-
-.chat-input i {
-    font-size: 30px;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-}
-
-.chat-body {
-    position: fixed;
-    overflow: auto;
-    top: 50px;
-    bottom: 50px;
-    left: 0px;
-    right: 0px;
-    background: rgb(185, 213, 255);
-}
-
-
-/* msg component */
-.msg-l div, .msg-r div {
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-.msg-l img, .msg-r img {
-    height: 50px;
-    width: 50px;
-}
-
-.msg-l p, .msg-r p {
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 0px;
-    font-size: 18px;
-    background: white;
-    border: 1px solid #c9c9c9;
-    border-radius: 10px;
-    text-align: left;
-    word-break: break-word;
-}
-
-/* msg recieve */
-.msg-l {
-    margin-left: 5px;
-    margin-top: 5px;
-    margin-bottom: 2px;
-    width: 90%;
-}
-
-.msg-l span {
-    float: right;
-}
-
-.msg-l .col-xs-10 {
-    padding-left: 8px;
-}
-
-
-/* msg send */
-.msg-r {
-    float: right;
-    margin-right: 5px;
-    margin-top: 5px;
-    margin-bottom: 2px;
-    width: 90%;
-}
-
-.msg-r img {
-    float: right;
-}
-
-.msg-r .col-xs-10 {
-    padding-right: 8px;
-}
-
-.pin {
-    border: none;
-    border-bottom: 2px solid rgb(100, 100, 100);
-    font-size: 50px;
-    width: 125px;
-    text-align: center;
-    background: transparent;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.pin:focus {
-    outline: none;
-}
-
-#pin h3 {
-    margin-top: 90px;
-}
-
-#homebtn {
-    background: url(../images/home.png) no-repeat;
-    background-size: 26px;
-    background-position: center;
-    opacity: 0.5;
-}
-
-#chatbtn {
-    background: url(../images/chat.png) no-repeat;
-    background-size: 30px;
-    background-position: center;
-    opacity: 0.5;
-}
-
 #alarmbtn {
     background: url(../images/alarm.png) no-repeat;
     background-size: 30px;
@@ -617,12 +293,6 @@ button {
     opacity: 0.5;
 }
 
-#profilebtn {
-    background: url(../images/profile.png) no-repeat;
-    background-size: 26px;
-    background-position: center;
-    opacity: 0.5;
-}
 
 .alarmlist {
     border-bottom: 1px solid #5f5f5f;
@@ -664,7 +334,7 @@ button {
     bottom: 0px;
     left: 0px;
     right: 0px;
-    background: rgb(255, 255, 255);
+    background: #d6ecfa;
     padding-top: 20px;
     padding-left: 20px;
     padding-right: 20px;
@@ -683,8 +353,8 @@ button {
     margin-right: 9px;
     font-size: 20px;
     border: none;
-    color: rgb(255, 255, 255);
-    background-color: rgb(233, 111, 111);
+    color: #272625;
+    background-color: #F8F8FF;
     border-radius: 4px;
 }
 
@@ -700,104 +370,6 @@ button {
     border-radius: 4px;
 }
 
-h3.sick:after{
-    content: '';
-    margin-left: 7px;
-    height: 25px;
-    width: 25px;
-    position: relative;
-    background: url(../images/sick.png) no-repeat;
-    display: inline-block;
-    background-size: contain;
-}
-
-h4.sick:after{
-    content: '';
-    margin-left: 7px;
-    height: 16px;
-    width: 16px;
-    position: relative;
-    background: url(../images/sick.png) no-repeat;
-    display: inline-block;
-    background-size: contain;
-}
-
-h3.happy:after{
-    content: '';
-    margin-left: 7px;
-    height: 25px;
-    width: 25px;
-    position: relative;
-    background: url(../images/happy.png) no-repeat;
-    display: inline-block;
-    background-size: contain;
-}
-
-h4.happy:after{
-    content: '';
-    margin-left: 7px;
-    height: 16px;
-    width: 16px;
-    position: relative;
-    background: url(../images/happy.png) no-repeat;
-    display: inline-block;
-    background-size: contain;
-}
-
-p.sick:after{
-    content: '';
-    margin-left: 7px;
-    height: 16px;
-    width: 16px;
-    position: relative;
-    background: url(../images/sick.png) no-repeat;
-    display: inline-block;
-    background-size: contain;
-}
-
-p.happy:after{
-    content: '';
-    margin-left: 7px;
-    height: 16px;
-    width: 16px;
-    position: relative;
-    background: url(../images/happy.png) no-repeat;
-    display: inline-block;
-    background-size: contain;
-}
-
-p.male:after{
-    content: '';
-    margin-left: 20px;
-    height: 19px;
-    width: 19px;
-    position: relative;
-    background: url(../images/male.png) no-repeat;
-    display: inline-block;
-    background-size: contain;
-}
-
-p.female:after{
-    content: '';
-    margin-left: 20px;
-    height: 19px;
-    width: 19px;
-    position: relative;
-    background: url(../images/male.png) no-repeat;
-    display: inline-block;
-    background-size: contain;
-}
-
-.test-body {
-    position: fixed;
-    overflow: auto;
-    top: 50px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background: rgb(255, 255, 255);
-}
-
 .setting-body {
     position: fixed;
     overflow: auto;
@@ -810,230 +382,6 @@ p.female:after{
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
-}
-
-#friendbtn:before{
-    content: '';
-    height: 70%;
-    width: 100%;
-    background: url(../images/friend.png) no-repeat;
-    background-position: center;
-    display: block;
-    background-size: contain;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: 9%;
-}
-
-#knowledgebtn:before{
-    content: '';
-    height: 70%;
-    width: 100%;
-    background: url(../images/knowledge.png) no-repeat;
-    background-position: center;
-    display: block;
-    background-size: contain;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: 9%;
-}
-
-#entertainbtn:before{
-    content: '';
-    height: 70%;
-    width: 100%;
-    background: url(../images/entertain.png) no-repeat;
-    background-position: center;
-    display: block;
-    background-size: contain;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: 9%;
-}
-
-#callcenterbtn:before{
-    content: '';
-    height: 70%;
-    width: 100%;
-    background: url(../images/callcenter.png) no-repeat;
-    background-position: center;
-    display: block;
-    background-size: contain;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: 9%;
-}
-
-.friend-body {
-    position: fixed;
-    overflow: auto;
-    top: 50px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background: rgb(255, 255, 255);
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.friendlist {
-    padding-top: 5px;
-    display: flex;
-    position: relative;
-    left: 0;
-    right: 0;
-    padding-bottom: 5px;
-}
-
-#searchfriendbtn {
-    height: 35px;
-    margin-top: 7px;
-    margin-right: 13px;
-}
-
-.friendlist img {
-    height: 45px;
-    width: 45px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.modal-friendprofile-body {
-    position: relative;
-    height: 400px;
-    width: 80%;
-    background: white;
-    margin-top: 100px;
-}
-
-.modal-friendprofile-body img {
-    height: 112px;
-    width: 112px;
-    margin-top: 30px;
-}
-
-.modal-friendprofile-body .modal-bottom {
-    position: absolute;
-    bottom: 0px;
-    height: 65px;
-    width: 100%;
-    border-top: 1px solid;
-}
-
-.chaticon:before{
-    content: '';
-    height: 70%;
-    width: 100%;
-    background: url(../images/chaticon.png) no-repeat;
-    background-position: center;
-    display: block;
-    background-size: contain;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-p.chaticon {
-    margin-top: 43px;
-    font-size: 13px;
-}
-
-.addicon:before{
-    content: '';
-    height: 70%;
-    width: 100%;
-    background: url(../images/addfriend.png) no-repeat;
-    background-position: center;
-    display: block;
-    background-size: contain;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-p.addicon {
-    margin-top: 43px;
-    font-size: 13px;
-}
-
-.searchinput {
-    margin-top: 16%;
-    width: 60%;
-    text-align: center;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid rgb(100, 100, 100);
-    margin-bottom: 20px;
-}
-
-.callcenter-body {
-    position: fixed;
-    overflow: auto;
-    top: 50px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background: rgb(255, 255, 255);
-}
-
-.call-list {
-    position: relative;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    left: 0;
-    right: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-bottom: 1px solid;
-}
-
-.call-list h4 {
-    line-height: 1.3;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.call-list div {
-    margin-top: 10px;
-}
-
-.knowledge-body {
-    position: fixed;
-    overflow: auto;
-    top: 50px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background: rgb(255, 255, 255);
-}
-
-.knowledgelist {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid;
-}
-
-.knowledgelist h3 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-.entlist {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid;
-}
-
-.entlist h3 {
-    margin-top: 0px;
-    margin-bottom: 0px;
 }
 
 div.k {
@@ -1064,48 +412,8 @@ div.k p {
     bottom: 0px;
     width: 100%;
     margin-bottom: 44px;
-    
+
 }
-
-.noti {
-    float: right;
-    background: red;
-    display: inline-block;
-    border-radius: 50%;
-    padding-left: 7px;
-    padding-right: 7px;
-    color: white;
-    margin-right: 10px;
-}
-
-.chat-all {
-    padding-top: 15px;
-    background: rgb(143, 238, 159);
-}
-
-.chat-all p {
-    font-size: 25px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1177,13 +485,13 @@ input:checked + .slider:before {
     -webkit-animation: spin 1s linear infinite;
     animation: spin 1s linear infinite;
   }
-  
+
   /* Safari */
   @-webkit-keyframes spin {
     0% { -webkit-transform: rotate(0deg); }
     100% { -webkit-transform: rotate(360deg); }
   }
-  
+
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -1198,9 +506,5 @@ input:checked + .slider:before {
 }
 
 .bg-blue {
-    background-color: rgb(111, 168, 233);
-}
-
-.bg-yellow {
-    background-color: rgb(253, 255, 125);
+    background-color: #000080;
 }
