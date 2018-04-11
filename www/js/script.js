@@ -2,69 +2,18 @@ var username;
 var email;
 var password;
 var confirmpassword;
-var firstname;
-var lastname;
 var dateofbirth;
 var gender;
-var number;
-var status;
-var playerid;
-var myimg;
-var currentplayerid = ''
-var currentchatkey = ''
-var currentchatfriend = ''
-var currentfimg = ''
-
-$('.chat-input input').css('width', $(window).width() - 55)
 
 $(document).ready(function (e) {
     document.addEventListener("backbutton", onBackKeyDown, false);
 });
 
 function onBackKeyDown() {
-    if ($('#chatroom').is(':visible')) {
-        currentplayerid = ''
-        currentchatkey = ''
-        currentchatfriend = ''
-        currentfimg = ''
-        $('#chatroom').hide()
-        $('#mainlayout').show()
-    } else if ($('#register').is(':visible')) {
+    if ($('#register').is(':visible')) {
         $('#register').hide("slide", { direction: "right" }, 500, function () {
-            $('#login').show("fade"); mainheader
-            $('#mainheader').show("fade");
-        });
-    } else if ($('#forgetpass').is(':visible')) {
-        $('#forgetpass').hide("slide", { direction: "right" }, 500, function () {
             $('#login').show("fade");
-        });
-    } else if ($('#beforeregister').is(':visible')) {
-        $('#beforeregister').hide("slide", { direction: "right" }, 500, function () {
             $('#mainheader').show("fade");
-            $('#login').show("fade");
-        });
-    } else if ($('#bgquiz').is(':visible')) {
-        $('#test2q').hide("slide", { direction: "right" }, 500, function () {
-            $('#mainheader').show("fade");
-            $('#login').show("fade");
-        });
-        $('#test9q').hide("slide", { direction: "right" }, 500, function () {
-            $('#mainheader').show("fade");
-            $('#login').show("fade");
-        });
-        $('#bgquiz').hide("slide", { direction: "right" }, 500, function () {
-            $('#mainheader').show("fade");
-            $('#login').show("fade");
-        });
-    } else if ($('#register').is(':visible')) {
-        $('#register').hide("slide", { direction: "right" }, 500, function () {
-            $('#mainheader').show("fade");
-            $('#login').show("fade");
-        });
-    } else if ($('#pin').is(':visible')) {
-        $('#pin').hide("slide", { direction: "right" }, 500, function () {
-            $('#mainheader').show("fade");
-            $('#login').show("fade");
         });
     } else if ($('#editalarm').is(':visible')) {
         $('#editalarm').hide()
@@ -75,45 +24,8 @@ function onBackKeyDown() {
     } else if ($('#setting').is(':visible')) {
         $('#setting').hide()
         $('#mainlayout').show()
-    } else if ($('#newtest2q').is(':visible')) {
-        $('#newtest2q').hide()
-        $('#mainlayout').show()
-    } else if ($('#newtest9q').is(':visible')) {
-        $('#newtest9q').hide()
-        $('#mainlayout').show()
-    } else if ($('#newtest8q').is(':visible')) {
-        $('#newtest8q').hide()
-        $('#mainlayout').show()
     } else if ($('.modal').is(':visible')) {
         $('.modal').modal('hide')
-    } else if ($('#friend').is(':visible')) {
-        $('#friend').hide()
-        $('#mainlayout').show()
-    } else if ($('#callcenter').is(':visible')) {
-        $('#callcenter').hide()
-        $('#mainlayout').show()
-    } else if ($('#knowledge').is(':visible')) {
-        $('#knowledge').hide()
-        $('#mainlayout').show()
-    } else if ($('#knowledge-detail').is(':visible')) {
-        $('#knowledge-detail').hide()
-        $('#knowledge').show()
-    } else if ($('#entertain').is(':visible')) {
-        $('#entertain').hide()
-        $('#mainlayout').show()
-    } else if ($('#ent-detail').is(':visible')) {
-        $('#iframe').hide()
-        $('iframe').hide()
-        $('iframe').each(function () {
-            $(this).attr('src', $(this).attr('src'))
-        })
-        $('#ent-detail').hide()
-        $('#ent-detail .knowledge-body').hide()
-        $('#entertain').show()
-    } else if ($('#iframe').is(':visible')) {
-        $('#iframe').hide()
-        $('iframe').hide()
-        $('#ent-detail').show()
     }
 };
 
@@ -128,7 +40,6 @@ for (i = 0; i <= 80; i++) {
 
 $('#year').append(html)
 
-
 var db = null;
 var alarmlength;
 
@@ -137,8 +48,6 @@ document.addEventListener('deviceready', function () {
         name: 'mydb.db',
         location: 'default'
     });
-    console.log(db);
-
     initlalarmtable()
     initalarmlist()
     initalert()
@@ -196,8 +105,6 @@ function initalarmlist() {
                 firebase.database().ref().child('userprofile/' + user.displayName)
                     .update({ alarmList: alarmArray });
             }
-            // firebase.database().ref().child('userprofile/' + newPostKey)
-            //     .update({ alarmList: alarmArray });
         }, function (error) {
             console.log('SELECT SQL statement ERROR: ' + error.message);
         });
@@ -329,37 +236,6 @@ var notificationOpenedCallback = function (jsonData) {
     console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
 };
 
-var notificationReceivedCallback = function (jsonData) {
-    if ($('#chatroom').is(':visible')) {
-        var date = new Date();
-        var day = date.getDate();
-        var month = date.getMonth();
-        var hour = date.getHours();
-        var min = date.getMinutes();
-        if (day.toString().length < 2)
-            day = '0' + day
-        if (month.toString().length < 2)
-            month = '0' + month
-        if (hour.toString().length < 2)
-            hour = '0' + hour
-        if (min.toString().length < 2)
-            min = '0' + min
-        var html = ''
-        html += '<div class="msg-l">'
-        html += '<div class="col-xs-2">'
-        html += '<img src="images/testpro.png" class="img-circle">'
-        html += '</div>'
-        html += '<div class="col-xs-10">'
-        html += '<p >' + jsonData.payload.additionalData.msg + '</p>'
-        html += '<span>' + month + '/' + day + ' - ' + hour + ':' + min + '</span>'
-        html += '</div>'
-        html += '</div>'
-        $('.chat-body').append(html)
-        $('.chat-body').scrollTop($('.chat-body')[0].scrollHeight);
-    }
-};
-
-
 document.addEventListener('deviceready', function () {
     window.plugins.OneSignal
         .startInit("8eff264c-84d7-45e1-bbbb-31b5de488f2c")
@@ -370,33 +246,12 @@ document.addEventListener('deviceready', function () {
 
 }, false);
 
-
-
-function setvalue() {
-    firebase.database().ref('chat/chat1/m2').set({
-        msg: 'dfgdsfg',
-        read: false,
-        sender: 'gg',
-        timestamp: '12;99'
-    });
-}
-
-function queryfirebase() {
-    var ref = firebase.database().ref("chat/chat1");
-    ref.once("value").then(function (snapshot) {
-        snapshot.forEach(function (childSnapshot) {
-            console.log(childSnapshot.child('msg').val())
-        });
-        var m1 = snapshot.child("m1").exists() // {first:"Ada",last:"Lovelace"}
-        var msg = snapshot.child("m1/msg").val(); // "Ada"
-    });
-}
-
-
 // check state login-----------------------------------
 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
+        console.log(user);
+
         var displayName = user.displayName || "";
         var email = user.email;
         var emailVerified = user.emailVerified;
@@ -404,7 +259,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         var isAnonymous = user.isAnonymous;
         var uid = user.uid;
         var providerData = user.providerData;
-        console.log(displayName)
+        console.log(displayName.toString())
         inituserprofile(displayName)
     } else {
         console.log('logout')
@@ -417,20 +272,26 @@ firebase.auth().onAuthStateChanged(function (user) {
 function inituserprofile(displayName) {
     var ref = firebase.database().ref("userprofile/" + displayName.toString());
     ref.once("value").then(function (snapshot) {
-        username = snapshot.child("username").val()
-        email = snapshot.child("email").val()
-        dateofbirth = snapshot.child("dateofbirth").val()
-        gender = snapshot.child("gender").val()
+        console.log(snapshot);
+        console.log(snapshot.child("alarmList").val());
+        if (snapshot.child("username").val()) {
+            username = snapshot.child("username").val()
+            email = snapshot.child("email").val()
+            dateofbirth = snapshot.child("dateofbirth").val()
+            gender = snapshot.child("gender").val()
 
-        $('.myname').text(username)
-        $('.myemail').text(email)
-        $('.mydateofbirth').text(dateofbirth)
-        if (gender == 'ชาย') {
-            $('.mydateofbirth').addClass('male')
+            $('.myname').text(username)
+            $('.myemail').text(email)
+            $('.mydateofbirth').text(dateofbirth)
+            if (gender == 'ชาย') {
+                $('.mydateofbirth').addClass('male')
+            } else {
+                $('.mydateofbirth').addClass('female')
+            }
+            $('#mainlayout').show()
+            $('#alarm').show()
         } else {
-            $('.mydateofbirth').addClass('female')
+            setTimeout(inituserprofile(displayName), 500)
         }
-        $('#mainlayout').show()
-        $('#alarm').show()
     })
 }
