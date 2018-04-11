@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html>
+
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="format-detection" content="telephone=no">
@@ -38,13 +40,13 @@
 </head>
 
 <body>
-    <div id="mainheader" align="center">
+    <div id="mainheader" align="center" hidden>
         <img src="images/logo.png" alt="">
-        <h3>Medical Notification</h3>
+        <h3>Pill Notifier</h3>
     </div>
 
     <!-- login page -->
-    <div id="login">
+    <div id="login" hidden>
         <div class="container" align="center">
             <div>
                 <img class="user" src="images/user.png" alt="">
@@ -146,27 +148,12 @@
                 <p>การแจ้งเตือน</p>
                 <i id="addalarmbtn" class="material-icons pull-right">add_circle_outline</i>
             </div>
-            <div class="div-alarmlist">
-                <div id="eiei" class="alarmlist">
-                    <div class="info">
-                        <h3>น้ำยาลดไข้ ยาลดไข้ ยาลดไข้ ยาลดไข้ ยาลดไข้</h3>
-                        <p>17:00</p>
-                        <p>1 เม็ด ก่อนรับประทานอาหาร</p>
-                    </div>
-                    <div class="checkalarm">
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
+            <div class="div-alarmlist"></div>
         </div>
 
         <div id="profile" class="main" hidden>
             <div class="header-tab">
                 <p>โปรไฟล์</p>
-                <i id="settingbtn" class="material-icons pull-right">settings</i>
             </div>
             <div class="container" style="margin-top: 15px; margin-bottom: 15px;" align="center">
                 <h3 class="myusername"></h3>
@@ -255,23 +242,7 @@
         </div>
     </div>
 
-    <!-- setting -->
-    <div id="setting" hidden>
-        <div class="header-tab bg-blue">
-            <p>ตั้งค่า</p>
-            <!-- <button id="logoutbtn" class="pull-right header-button">ออกจากระบบ</button> -->
-        </div>
-        <div class="setting-body" align="center">
-            <img id="settingaddprofileimg" src="images/emptyprofileimg.jpg" class="myimg img-circle">
-            <p style="margin-top: 40%;">ติดต่อเรา</p>
-            <p>Email : thawan_rung2012@hotmail.com</p>
-            <button id="settingcancel" class="confirmbutton bg-red">ยกเลิก</button>
-            <button id="settingconfirm" class="confirmbutton bg-green">บันทึก</button>
-        </div>
-    </div>
-
     <!-- Modal -->
-
     <!-- deletealarm -->
     <div id="modal-deletealarm" class="modal fade" role="dialog" align="center">
         <div class="modal-delete-body" align="center">
@@ -283,7 +254,6 @@
         </div>
     </div>
 
-
     <!-- main script -->
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/zepto.js"></script>
@@ -293,7 +263,6 @@
     <script type="text/javascript" src="js/register.js"></script>
     <script type="text/javascript" src="js/mainpage.js"></script>
     <script type="text/javascript" src="js/editalarm.js"></script>
-    <script type="text/javascript" src="js/setting.js"></script>
 </body>
 
 </html>

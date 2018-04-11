@@ -21,9 +21,6 @@ function onBackKeyDown() {
     } else if ($('#addalarm').is(':visible')) {
         $('#addalarm').hide()
         $('#mainlayout').show()
-    } else if ($('#setting').is(':visible')) {
-        $('#setting').hide()
-        $('#mainlayout').show()
     } else if ($('.modal').is(':visible')) {
         $('.modal').modal('hide')
     }
@@ -48,13 +45,13 @@ document.addEventListener('deviceready', function () {
         name: 'mydb.db',
         location: 'default'
     });
-    initlalarmtable()
-    initalarmlist()
-    initalert()
+    createAlarmDatabase()
+    createAlarmList()
+    initAlert()
 });
 
 
-function initlalarmtable() {
+function createAlarmDatabase() {
     db.sqlBatch([
         'CREATE TABLE IF NOT EXISTS Alarm (no, name, hour, minute, amount, time, sound, active)',
     ], function () {
@@ -64,7 +61,7 @@ function initlalarmtable() {
     });
 }
 
-function initalarmlist() {
+function createAlarmList() {
     $('.div-alarmlist').empty()
     db.executeSql('SELECT no AS no, name AS name, hour AS hour, minute AS minute, amount AS amount, time AS time, sound AS sound, active AS active FROM Alarm ORDER BY hour, minute, no', [],
         function (rs) {
@@ -80,27 +77,10 @@ function initalarmlist() {
                 alarmObj.time = rs.rows.item(i).time;
                 alarmObj.active = rs.rows.item(i).active;
                 alarmArray.push(alarmObj);
-
-                html = '<div id="' + rs.rows.item(i).no + '" class="alarmlist"><div class="info">'
-                html += '<h3>' + rs.rows.item(i).name + '</h3>'
-                html += '<p>' + rs.rows.item(i).hour + ':'
-                html += rs.rows.item(i).minute + '</p>'
-                html += '<p>' + rs.rows.item(i).amount + ' เม็ด '
-                if (rs.rows.item(i).time == 'before')
-                    html += 'ก่อนรับประทานอาหาร</p></div>'
-                else
-                    html += 'หลังรับประทานอาหาร</p></div>'
-                if (rs.rows.item(i).active == 'true')
-                    html += '<div class="checkalarm"><label class="switch"><input type="checkbox" checked=true><span class="slider round"></span></label></div></div>'
-                else
-                    html += '<div class="checkalarm"><label class="switch"><input type="checkbox"><span class="slider round"></span></label></div></div>'
-                $('.div-alarmlist').append(html)
-                if (rs.rows.item(i).active == 'true')
-                    initalarm(rs.rows.item(i).no)
+                createAlarm(alarmObj);
             }
 
             var user = firebase.auth().currentUser;
-            console.log(user);
             if (user) {
                 firebase.database().ref().child('userprofile/' + user.displayName)
                     .update({ alarmList: alarmArray });
@@ -110,7 +90,44 @@ function initalarmlist() {
         });
 }
 
-function initalarm(no) {
+function createAlarm(alarmObj) {
+    html = '<div id="' + alarmObj.no + '" class="alarmlist"><div class="info">' +
+        '<h3>' + alarmObj.name + '</h3>' +
+        '<p>' + alarmObj.hour + ':' + alarmObj.minute + '</p>' +
+        '<p>' + alarmObj.amount + ' เม็ด ';
+
+    if (alarmObj.time == 'before') {
+        html += 'ก่อนรับประทานอาหาร</p></div>';
+    } else {
+        html += 'หลังรับประทานอาหาร</p></div>';
+    }
+
+    if (alarmObj.active == 'true') {
+        html += '<div class="checkalarm"><label class="switch"><input type="checkbox" checked=true><span class="slider round"></span></label></div></div>'
+    } else {
+        html += '<div class="checkalarm"><label class="switch"><input type="checkbox"><span class="slider round"></span></label></div></div>'
+    }
+
+    $('.div-alarmlist').append(html)
+
+    if (alarmObj.active == 'true') {
+        initAlarm(alarmObj.no)
+    }
+}
+
+function importAlarm(alarmArray) {
+    alarmArray.forEach((alarmObj, index) => {
+        db.sqlBatch([
+            ['INSERT INTO Alarm VALUES (?,?,?,?,?,?,?,?)', [index, alarmObj.name, alarmObj.hour, alarmObj.minute, alarmObj.amount, alarmObj.time, '', true]],
+        ], function () {
+            console.log('SQL batch ERROR: ' + error.message);
+        }, function (error) {
+            console.log('SQL batch ERROR: ' + error.message);
+        });
+    });
+}
+
+function initAlarm(no) {
     db.executeSql('SELECT no AS no, name AS name, hour AS hour, minute AS minute, amount AS amount, time AS time, sound AS sound FROM Alarm WHERE no = ' + no, [],
         function (rs) {
             var d = new Date()
@@ -147,7 +164,7 @@ function initalarm(no) {
         });
 }
 
-function initalert() {
+function initAlert() {
     var d = new Date()
     var hour = 8
     var minute = 0
@@ -250,8 +267,6 @@ document.addEventListener('deviceready', function () {
 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-        console.log(user);
-
         var displayName = user.displayName || "";
         var email = user.email;
         var emailVerified = user.emailVerified;
@@ -259,8 +274,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         var isAnonymous = user.isAnonymous;
         var uid = user.uid;
         var providerData = user.providerData;
-        console.log(displayName.toString())
-        inituserprofile(displayName)
+        initUserProfile(displayName.toString());
     } else {
         console.log('logout')
         $('#mainheader').show()
@@ -269,16 +283,28 @@ firebase.auth().onAuthStateChanged(function (user) {
 });
 
 
-function inituserprofile(displayName) {
-    var ref = firebase.database().ref("userprofile/" + displayName.toString());
+function initUserProfile(displayName) {
+    var ref = firebase.database().ref("userprofile/" + displayName);
     ref.once("value").then(function (snapshot) {
-        console.log(snapshot);
-        console.log(snapshot.child("alarmList").val());
-        if (snapshot.child("username").val()) {
+        username = snapshot.child("username").val() || "";
+        if (snapshot.child("username").exists() && username === displayName) {
             username = snapshot.child("username").val()
             email = snapshot.child("email").val()
             dateofbirth = snapshot.child("dateofbirth").val()
             gender = snapshot.child("gender").val()
+            if (snapshot.child("alarmList").val()) {
+                $('.div-alarmlist').empty()
+                alarmList = snapshot.child("alarmList").val();
+                db.sqlBatch([
+                    ['DROP TABLE IF EXISTS Alarm'],
+                ], function () {
+                    createAlarmDatabase();
+                    importAlarm(alarmList);
+                    createAlarmList();
+                }, function (error) {
+                    console.log('SQL batch ERROR: ' + error.message);
+                });
+            }
 
             $('.myname').text(username)
             $('.myemail').text(email)
@@ -290,8 +316,6 @@ function inituserprofile(displayName) {
             }
             $('#mainlayout').show()
             $('#alarm').show()
-        } else {
-            setTimeout(inituserprofile(displayName), 500)
         }
     })
 }

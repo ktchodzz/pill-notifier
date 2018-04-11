@@ -1,24 +1,22 @@
-
-
-$('#editalarmcancel').on('click',function(){
+$('#editalarmcancel').on('click', function () {
     $('#editalarm').hide()
     $('#mainlayout').show()
 })
 
-$('#editalarmconfirm').on('click',function(){
-    editalarmconfirm(storage.getItem('currentno'))
+$('#editalarmconfirm').on('click', function () {
+    onEditAlarmConfirm(storage.getItem('currentno'))
 })
 
-$('#addalarmcancel').on('click',function(){
+$('#addalarmcancel').on('click', function () {
     $('#addalarm').hide()
     $('#mainlayout').show()
 })
 
-$('#addalarmconfirm').on('click',function(){
-    addnewalarm()
+$('#addalarmconfirm').on('click', function () {
+    addAlarm()
 })
 
-$('#alert').on('click',function(){
+$('#alert').on('click', function () {
     var date = new Date()
     date.setMinutes(d.getMinutes + 1)
     cordova.plugins.notification.local.schedule({
@@ -31,25 +29,38 @@ $('#alert').on('click',function(){
     });
 })
 
-$('.div-alarmlist').on('change', 'input[type="checkbox"]',function(){
+$('.div-alarmlist').on('change', 'input[type="checkbox"]', function () {
     var no = $(this).parent().parent().parent().attr('id')
     if ($(this).prop('checked')) {
-        editactive(no, true)
+        editActiveAlarm(no, true)
     } else {
-        editactive(no, false)
+        editActiveAlarm(no, false)
     }
 })
 
-function addnewalarm() {
+$('#deletealarm').on('click', function () {
+    $('#modal-deletealarm').modal()
+})
+
+$('#canceldelete').on('click', function () {
+    $('.modal').modal('hide')
+})
+
+$('#confirmdelete').on('click', function () {
+    $('.modal').modal('hide')
+    deleteAlarm(storage.getItem('currentno'))
+})
+
+function addAlarm() {
     var hour = $('#addalarm .timepicker').val().split(':')[0]
     var minute = $('#addalarm .timepicker').val().split(':')[1]
     var name = $('#addalarm #pillname').val();
     var amount = $('#addalarm #pillamount').val()
     var time = $("#addalarm input[name='wheneat']:checked").val()
     db.sqlBatch([
-        ['INSERT INTO Alarm VALUES (?,?,?,?,?,?,?,?)', [alarmlength+1, name, hour, minute, amount, time, '', true]],
+        ['INSERT INTO Alarm VALUES (?,?,?,?,?,?,?,?)', [alarmlength + 1, name, hour, minute, amount, time, '', true]],
     ], function () {
-        initalarmlist()
+        createAlarmList()
         $('#addalarm').hide()
         $('#mainlayout').show()
     }, function (error) {
@@ -57,14 +68,14 @@ function addnewalarm() {
     });
 }
 
-function editactive(no, active){
+function editActiveAlarm(no, active) {
     db.sqlBatch([
         ['UPDATE Alarm SET active = ? WHERE no = ' + no, [active]],
     ], function () {
-        if (active == false){
-            disablealarm(no)
-        }else if (active == true){
-            initalarm(no)
+        if (active == false) {
+            disableAlarm(no)
+        } else if (active == true) {
+            initAlarm(no)
         }
         console.log('finish')
     }, function (error) {
@@ -72,13 +83,13 @@ function editactive(no, active){
     });
 }
 
-function deletealarm(no){
+function deleteAlarm(no) {
     db.sqlBatch([
         ['DELETE FROM Alarm WHERE no = ' + no, []],
     ], function () {
         console.log('finish')
-        disablealarm(no)
-        initalarmlist()
+        disableAlarm(no)
+        createAlarmList()
         $('#editalarm').hide()
         $('#mainlayout').show()
     }, function (error) {
@@ -86,20 +97,7 @@ function deletealarm(no){
     });
 }
 
-$('#deletealarm').on('click',function(){
-    $('#modal-deletealarm').modal()
-})
-
-$('#canceldelete').on('click',function(){
-    $('.modal').modal('hide')
-})
-
-$('#confirmdelete').on('click',function(){
-    $('.modal').modal('hide')
-    deletealarm(storage.getItem('currentno'))
-})
-
-function editalarmconfirm(no) {
+function onEditAlarmConfirm(no) {
     var hour = $('#editalarm .timepicker').val().split(':')[0]
     var minute = $('#editalarm .timepicker').val().split(':')[1]
     var name = $('#editalarm #pillname').val();
@@ -109,7 +107,7 @@ function editalarmconfirm(no) {
         ['UPDATE Alarm SET name = ?, hour = ?, minute = ?, amount = ?, time = ?, active = ? WHERE no = ' + no, [name, hour, minute, amount, time, true]],
     ], function () {
         console.log('finish')
-        initalarmlist()
+        createAlarmList()
         $('#editalarm').hide()
         $('#mainlayout').show()
     }, function (error) {
@@ -117,7 +115,7 @@ function editalarmconfirm(no) {
     });
 }
 
-function disablealarm(no) {
-    cordova.plugins.notification.local.cancel(no, function() {
+function disableAlarm(no) {
+    cordova.plugins.notification.local.cancel(no, function () {
     });
 }
