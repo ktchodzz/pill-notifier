@@ -14,13 +14,10 @@ $('#registerconfirm').on('click', function () {
     confirmpassword = $('#confirmpassword').val().replace(/\s/g, '')
     dateofbirth = $('#day').val() + '/' + $('#month').val() + '/' + $('#year').val()
     gender = $('#gender').val()
-    window.plugins.OneSignal.getIds(function (ids) {
-        playerid = ids.userId
-        checkusername(username)
-    })
+    checkUsername(username)
 })
 
-function checkusername(username) {
+function checkUsername(username) {
     var ref = firebase.database().ref("userprofile");
     ref.once("value").then(function (snapshot) {
         var check = snapshot.child(username).exists()
@@ -32,29 +29,27 @@ function checkusername(username) {
             } else {
                 $('#mainheader').hide()
                 $('#register').hide("slide", { direction: "left" }, 500, function () {
-                    registertodb()
-                    $('#mainlayout').show()
-                    $('#alarm').show()
+                    registerUser();
                 });
             }
         }
     })
 }
 
-function registertodb() {
+function registerUser() {
     firebase.database().ref('userprofile/' + username.toString()).set({
         dateofbirth: dateofbirth.toString(),
         gender: gender.toString(),
         email: email,
-        username: username.toString(),
-        playerid: playerid
+        username: username.toString()
     }).then(function () {
-        register = true
-        createuser()
+        register = true;
+        createUser();
     })
 }
 
-function createuser() {
+function createUser() {
+    var tempName;
     if (register) {
         firebase.auth()
             .createUserWithEmailAndPassword(email.toString(), password.toString())
@@ -64,10 +59,13 @@ function createuser() {
                 console.log(errorMessage);
             }).then(function () {
                 var user = firebase.auth().currentUser;
+                tempName = username.toString();
                 user.updateProfile({
-                    displayName: username.toString(),
+                    displayName: tempName
                 }).then(function () {
-                    console.log("successfully created the user ")
+                    console.log("successfully created the user");
+                    console.log(tempName);
+                    initUserProfile(tempName)
                 }).catch(function (error) {
                     console.log("Error: ", error);
                 });
