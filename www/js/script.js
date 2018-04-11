@@ -280,14 +280,17 @@ function inituserprofile(displayName) {
             dateofbirth = snapshot.child("dateofbirth").val()
             gender = snapshot.child("gender").val()
 
-            $('.myname').text(username)
-            $('.myemail').text(email)
-            $('.mydateofbirth').text(dateofbirth)
+            $('.myname').text("Username    :  "+username)
+            $('.myemail').text("Email      :  "+email)
+            $('.mydateofbirth').text("Birth Date  :  "+dateofbirth)
+      
+
             if (gender == 'ชาย') {
-                $('.mydateofbirth').addClass('male')
+                $('.gender').text("Gender  : Male")
             } else {
-                $('.mydateofbirth').addClass('female')
+                $('.gender').text("Gender  : Female")
             }
+
             $('#mainlayout').show()
             $('#alarm').show()
         } else {

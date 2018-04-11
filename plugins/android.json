@@ -7,10 +7,16 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.example.senior"
+    },
+    "cordova-plugin-chrome-apps-alarms": {
       "PACKAGE_NAME": "com.example.senior"
     },
     "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "com.example.senior"
+    },
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.example.senior"
     },
     "cordova-sqlite-storage": {
@@ -18,16 +24,22 @@
     },
     "onesignal-cordova-plugin": {
       "PACKAGE_NAME": "com.example.senior"
-    },
-    "cordova-plugin-camera": {
-      "PACKAGE_NAME": "com.example.senior"
     }
   },
   "dependent_plugins": {
-    "cordova-plugin-device": {
+    "cordova-plugin-badge": {
       "PACKAGE_NAME": "com.example.senior"
     },
-    "cordova-plugin-badge": {
+    "cordova-plugin-chrome-apps-common": {
+      "PACKAGE_NAME": "com.example.senior"
+    },
+    "cordova-plugin-chrome-apps-storage": {
+      "PACKAGE_NAME": "com.example.senior"
+    },
+    "cordova-plugin-background-app": {
+      "PACKAGE_NAME": "com.example.senior"
+    },
+    "cordova-plugin-device": {
       "PACKAGE_NAME": "com.example.senior"
     }
   }
