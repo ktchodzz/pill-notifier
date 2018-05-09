@@ -24,7 +24,9 @@ function checkUsername(username) {
         if (check) {
             alert('มีชื่อผู้ใช้นี้อยู่ในระบบแล้ว')
         } else {
-            if (password != confirmPassword) {
+            if (password.length < 6) {
+                alert('รหัสผ่านสั้นไป ควรใส่อย่างน้อย 6 อักขระ')
+            } else if (password != confirmPassword) {
                 alert('รหัสผ่านไม่ตรงกัน')
             } else {
                 $('#mainHeader').hide()
