@@ -47,7 +47,6 @@ document.addEventListener('deviceready', function () {
     });
     createAlarmDatabase()
     createAlarmList()
-    initAlert()
 });
 
 
@@ -166,89 +165,6 @@ function initAlarm(no) {
             console.log('SELECT SQL statement ERROR: ' + error.message);
         });
 }
-
-function initAlert() {
-    var d = new Date()
-    var hour = 8
-    var minute = 0
-    if (hour < d.getHours()) {
-        d.setDate(d.getDate() + 1)
-    } else if (hour == d.getHours()) {
-        if (minute < d.getMinutes()) {
-            d.setDate(d.getDate() + 1)
-        }
-    }
-    var date = d.getDate()
-    var month = d.getMonth() + 1
-    cordova.plugins.notification.local.schedule({
-        id: 100,
-        title: 'ตื่นๆๆๆ เช้าแล้วววว',
-        text: 'เช้าแล้วกินข้าวด้วยน้าา',
-        sound: 'file://sounds/เช้า.mp3',
-        trigger: { every: { month: month, day: date, hour: hour, minute: minute } }
-    });
-
-    var d = new Date()
-    var hour = 12
-    var minute = 0
-    if (hour < d.getHours()) {
-        d.setDate(d.getDate() + 1)
-    } else if (hour == d.getHours()) {
-        if (minute < d.getMinutes()) {
-            d.setDate(d.getDate() + 1)
-        }
-    }
-    var date = d.getDate()
-    var month = d.getMonth() + 1
-    cordova.plugins.notification.local.schedule({
-        id: 101,
-        title: 'เที่ยงแล้ววว',
-        text: 'เที่ยงแล้วกินข้าวด้วยน้าา',
-        sound: 'file://sounds/เที่ยง.mp3',
-        trigger: { every: { month: month, day: date, hour: hour, minute: minute } }
-    });
-
-    var d = new Date()
-    var hour = 18
-    var minute = 0
-    if (hour < d.getHours()) {
-        d.setDate(d.getDate() + 1)
-    } else if (hour == d.getHours()) {
-        if (minute < d.getMinutes()) {
-            d.setDate(d.getDate() + 1)
-        }
-    }
-    var date = d.getDate()
-    var month = d.getMonth() + 1
-    cordova.plugins.notification.local.schedule({
-        id: 102,
-        title: 'เย็นแล้ววว',
-        text: 'เย็นแล้วกินข้าวด้วยน้าา',
-        sound: 'file://sounds/เย็น.mp3',
-        trigger: { every: { month: month, day: date, hour: hour, minute: minute } }
-    });
-
-    var d = new Date()
-    var hour = 21
-    var minute = 0
-    if (hour < d.getHours()) {
-        d.setDate(d.getDate() + 1)
-    } else if (hour == d.getHours()) {
-        if (minute < d.getMinutes()) {
-            d.setDate(d.getDate() + 1)
-        }
-    }
-    var date = d.getDate()
-    var month = d.getMonth() + 1
-    cordova.plugins.notification.local.schedule({
-        id: 103,
-        title: 'มืดแล้ววว',
-        text: 'นอนได้แล้ว ฝันดีค่ะ',
-        sound: 'file://sounds/ดึก.mp3',
-        trigger: { every: { month: month, day: date, hour: hour, minute: minute } }
-    });
-}
-
 
 // onesignal-------------------------------------
 
