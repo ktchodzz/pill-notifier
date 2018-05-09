@@ -40,7 +40,7 @@
 </head>
 
 <body>
-    <div id="mainheader" align="center">
+    <div id="mainHeader" align="center">
         <img src="images/logo.png" style="width:120px;height:120px;margin-bottom: 20px;" alt="">
         <h3>Pill Notifier</h3>
         <br>
@@ -51,92 +51,94 @@
         <div class="container" align="center">
             <div>
                 <img class="user" src="images/user.png" alt="">
-                <input id="loginemail" class="logininput" type="text" placeholder="ใส่อีเมลล์ของคุณ">
+                <input id="loginEmail" class="loginInput" type="text" placeholder="ใส่อีเมลล์ของคุณ">
             </div>
             <div>
                 <img class="password" src="images/password.png" alt="">
-                <input id="loginpassword" class="logininput" type="password" placeholder="ใส่รหัสของคุณ">
+                <input id="loginPassword" class="loginInput" type="password" placeholder="ใส่รหัสของคุณ">
             </div>
-            <button class="login bigbutton">เข้าสู่ระบบ</button>
+            <button class="login bigButton">เข้าสู่ระบบ</button>
             <div style="width:60%;min-width: 64px;">
-                <a id="registerbtn" class="pull-center">สมัครสมาชิก</a>
+                <a id="registerButton" class="pull-center">สมัครสมาชิก</a>
             </div>
         </div>
     </div>
 
     <!-- register -->
     <div id="register" align="center" hidden>
-        <div class="container">
-            <h3 style="margin-top: 15px;"><b>สมัครสมาชิก</b></h3>
-            <div align="left" style="width:90%;">
-                <p>ชื่อผู้ใช้</p>
-                <input id='username' type="text" class="registerinput">
-                <p>อีเมลล์</p>
-                <input id='email' type="email" class="registerinput">
-                <p>รหัสผ่าน</p>
-                <input id='password' type="password" class="registerinput">
-                <p>ยืนยันรหัสผ่าน</p>
-                <input id="confirmpassword" type="password" class="registerinput">
-                <p>วันเกิด</p>
-                <select name="" id="day" class="cselect">
-                    <option value="">วัน</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
-                    <option value="29">29</option>
-                    <option value="30">30</option>
-                    <option value="31">31</option>
-                </select>
-                <select name="" id="month" class="cselect">
-                    <option value="">เดือน</option>
-                    <option value="1">มกราคม</option>
-                    <option value="2">กุมภาพันธ์</option>
-                    <option value="3">มีนาคม</option>
-                    <option value="4">เมษายน</option>
-                    <option value="5">พฤษภาคม</option>
-                    <option value="6">มิถุนายน</option>
-                    <option value="7">กรกฏาคม</option>
-                    <option value="8">สิงหาคม</option>
-                    <option value="9">กันยายน</option>
-                    <option value="10">ตุลาคม</option>
-                    <option value="11">พฤศจิกายน</option>
-                    <option value="12">ธันวาคม</option>
-                </select>
-                <select name="" id="year" class="cselect"></select>
-                <p>เพศ</p>
-                <select name="" id="gender" class="cselect">
-                    <option value="">เพศ</option>
-                    <option value="ชาย">ชาย</option>
-                    <option value="หญิง">หญิง</option>
-                </select>
+      <div class="header-tab">
+          <p>สมัครสมาชิก</p>
+      </div>
+        <div class="container" style="margin-top:35px;">
+          <div align="left" style="width:90%;margin-top: 20px;">
+              <p>Username </p>
+              <input id='username' type="text" class="registerInput">
+              <p>E-mail </p>
+              <input id='email' type="email" class="registerInput">
+              <p>Password </p>
+              <input id='password' type="password" class="registerInput">
+              <p>Confirm Password </p>
+              <input id="confirmPassword" type="password" class="registerInput">
+              <p>Birth Date</p>
+              <select name="" id="day" class="selectOption">
+                  <option value="">วัน</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+              </select>
+              <select name="" id="month" class="selectOption">
+                  <option value="">เดือน</option>
+                  <option value="1">มกราคม</option>
+                  <option value="2">กุมภาพันธ์</option>
+                  <option value="3">มีนาคม</option>
+                  <option value="4">เมษายน</option>
+                  <option value="5">พฤษภาคม</option>
+                  <option value="6">มิถุนายน</option>
+                  <option value="7">กรกฏาคม</option>
+                  <option value="8">สิงหาคม</option>
+                  <option value="9">กันยายน</option>
+                  <option value="10">ตุลาคม</option>
+                  <option value="11">พฤศจิกายน</option>
+                  <option value="12">ธันวาคม</option>
+              </select>
+              <select name="" id="year" class="selectOption"></select>
+              <p>Gender </p>
+              <select name="" id="gender" class="selectOption">
+                  <option value="">เพศ</option>
+                  <option value="ชาย">ชาย</option>
+                  <option value="หญิง">หญิง</option>
+              </select>
             </div>
             <div>
-                <button id="registerconfirm" class="bigbutton">สมัครสมาชิก</button>
+                <button id="registerConfirm" class="bigButton">สมัครสมาชิก</button>
             </div>
         </div>
     </div>
@@ -147,9 +149,9 @@
         <div id="alarm" class="main" hidden>
             <div class="header-tab">
                 <p>การแจ้งเตือน</p>
-                <i id="addalarmbtn" class="material-icons pull-right">add_circle_outline</i>
+                <i id="addAlarmButton" class="material-icons pull-right">add_circle_outline</i>
             </div>
-            <div class="div-alarmlist"></div>
+            <div class="div-alarmList"></div>
         </div>
 
         <div id="profile" class="main" hidden>
@@ -157,21 +159,21 @@
                 <p>โปรไฟล์</p>
             </div>
             <div class="container" style="margin-top: 15px; margin-bottom: 15px; margin-left: 15px;margin-right: 15px;background-color:#F8F8FF;" align="left">
-                <h3 class="myusername"></h3>
-                <p class="myname"></p>
-                <p class="myemail"></p>
-                <p class="mydateofbirth"></p>
+                <h3 class="myUserName"></h3>
+                <p class="myName"></p>
+                <p class="myEmail"></p>
+                <p class="myDateOfBirth"></p>
                 <p class="gender"></p>
             </div>
 
             <div align="center">
-            <button id="logoutbtn" class="pull-center bigbutton">ออกจากระบบ</button>
+            <button id="logoutButton" class="pull-center bigButton bg-red">ออกจากระบบ</button>
             </div>
 
         </div>
         <div class="footer-menu">
-            <button id="alarmbtn" class="col-xs-6 active"></button>
-            <button id="profilebtn" class="col-xs-6"></button>
+            <button id="alarmButton" class="col-xs-6 active"></button>
+            <button id="profileButton" class="col-xs-6"></button>
         </div>
     </div>
 
@@ -179,18 +181,18 @@
     <div id="editalarm" hidden>
         <div class="header-tab bg-blue">
             <p>แก้ไขรายการ</p>
-            <button id="deletealarm" class="pull-right header-button">ลบ</button>
+            <button id="deleteAlarm" class="pull-right header-button">ลบ</button>
         </div>
         <div class="alarm-body" align="center">
             <input type="text" class="timepicker" value="00:00" style="background:transparent;">
-            <div class="pilllist" align="left">
+            <div class="pillList" align="left" style="border-radius: 5px;background-color: #F8F8FF;padding: 10px;">
                 <p>ชื่อยา</p>
-                <input id="pillname" type="text" class="registerinput">
+                <input id="pillName" type="text" class="registerInput">
                 <br>
                 <br>
                 <p style="display:inline-block;">ครั้งละ</p>
                 <p style="float:right;margin-right: 20%;">เม็ด</p>
-                <select name="" id="pillamount" class="cselect" style="float:right; margin-right: 15px;">
+                <select name="" id="pillAmount" class="selectOption" style="float:right; margin-right: 15px;">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -200,15 +202,17 @@
                 </select>
                 <br>
                 <br>
+                <p style="display:inline-block;padding-right:5px;">เวลาทาน</p>
                 <label class="radio-inline">
-                    <input type="radio" name="wheneat" value="before"> ก่อนอาหาร</label>
+                    <input type="radio" name="eatTime" value="before"> ก่อนอาหาร</label>
                 <label class="radio-inline">
-                    <input type="radio" name="wheneat" value="after"> หลังอาหาร</label>
+                    <input type="radio" name="eatTime" value="after"> หลังอาหาร</label>
+                <br>
+                    <p style="padding-top:3px;">บันทึกช่วยจํา</p>
+                    <textarea id="pillNotes" style="height:80px;width:100%;"></textarea>
             </div>
-            <br>
-            <br>
-            <button id="editalarmcancel" class="confirmbutton bg-red">ยกเลิก</button>
-            <button id="editalarmconfirm" class="confirmbutton bg-green">บันทึก</button>
+            <button id="editAlarmCancel" class="confirmButton bg-red">ยกเลิก</button>
+            <button id="editAlarmConfirm" class="confirmButton bg-green">บันทึก</button>
         </div>
     </div>
 
@@ -219,14 +223,14 @@
         </div>
         <div class="alarm-body" align="center">
             <input type="text" class="timepicker" value="00:00" style="background:transparent;">
-            <div class="pilllist" align="left">
+            <div class="pillList" align="left" style="border-radius: 5px;background-color: #F8F8FF;padding: 10px;">
                 <p>ชื่อยา</p>
-                <input id="pillname" type="text" class="registerinput">
+                <input id="pillName" type="text" class="registerInput">
                 <br>
                 <br>
                 <p style="display:inline-block;">ครั้งละ</p>
                 <p style="float:right;margin-right: 20%;">เม็ด</p>
-                <select name="" id="pillamount" class="cselect" style="float:right; margin-right: 15px;">
+                <select name="" id="pillAmount" class="selectOption" style="float:right; margin-right: 15px;">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -236,26 +240,28 @@
                 </select>
                 <br>
                 <br>
+                <p style="display:inline-block;padding-right:5px;">เวลาทาน</p>
                 <label class="radio-inline">
-                    <input type="radio" name="wheneat" value="before" checked=true> ก่อนอาหาร</label>
+                    <input type="radio" name="eatTime" value="before" checked=true> ก่อนอาหาร</label>
                 <label class="radio-inline">
-                    <input type="radio" name="wheneat" value="after"> หลังอาหาร</label>
+                    <input type="radio" name="eatTime" value="after"> หลังอาหาร</label>
+                <br>
+                    <p style="padding-top:3px;">บันทึกช่วยจํา</p>
+                    <textarea id="pillNotes" style="height:80px;width:100%;"></textarea>
             </div>
-            <br>
-            <br>
-            <button id="addalarmcancel" class="confirmbutton bg-red">ยกเลิก</button>
-            <button id="addalarmconfirm" class="confirmbutton bg-green">บันทึก</button>
+            <button id="addAlarmCancel" class="confirmButton bg-red">ยกเลิก</button>
+            <button id="addAlarmConfirm" class="confirmButton bg-green">บันทึก</button>
         </div>
     </div>
 
     <!-- Modal -->
-    <!-- deletealarm -->
-    <div id="modal-deletealarm" class="modal fade" role="dialog" align="center">
+    <!-- deleteAlarm -->
+    <div id="modal-deleteAlarm" class="modal fade" role="dialog" align="center">
         <div class="modal-delete-body" align="center">
             <p>ต้องการลบการแจ้งเตือนนี้หรือไม่</p>
             <div>
-                <button id="canceldelete" class="confirmbutton bg-red">ยกเลิก</button>
-                <button id="confirmdelete" class="confirmbutton bg-green">ตกลง</button>
+                <button id="cancelDelete" class="confirmButton bg-red">ยกเลิก</button>
+                <button id="confirmDelete" class="confirmButton bg-green">ตกลง</button>
             </div>
         </div>
     </div>

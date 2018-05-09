@@ -1,7 +1,7 @@
 var username;
 var email;
 var password;
-var confirmpassword;
+var confirmPassword;
 var dateofbirth;
 var gender;
 
@@ -13,7 +13,7 @@ function onBackKeyDown() {
     if ($('#register').is(':visible')) {
         $('#register').hide("slide", { direction: "right" }, 500, function () {
             $('#login').show("fade");
-            $('#mainheader').show("fade");
+            $('#mainHeader').show("fade");
         });
     } else if ($('#editalarm').is(':visible')) {
         $('#editalarm').hide()
@@ -53,7 +53,7 @@ document.addEventListener('deviceready', function () {
 
 function createAlarmDatabase() {
     db.sqlBatch([
-        'CREATE TABLE IF NOT EXISTS Alarm (no, name, hour, minute, amount, time, sound, active)',
+        'CREATE TABLE IF NOT EXISTS Alarm (no, name, hour, minute, amount, time, notes, sound, active)',
     ], function () {
         console.log('Populated database OK');
     }, function (error) {
@@ -62,8 +62,8 @@ function createAlarmDatabase() {
 }
 
 function createAlarmList() {
-    $('.div-alarmlist').empty()
-    db.executeSql('SELECT no AS no, name AS name, hour AS hour, minute AS minute, amount AS amount, time AS time, sound AS sound, active AS active FROM Alarm ORDER BY hour, minute, no', [],
+    $('.div-alarmList').empty()
+    db.executeSql('SELECT no AS no, name AS name, hour AS hour, minute AS minute, amount AS amount, time AS time, notes AS notes, sound AS sound, active AS active FROM Alarm ORDER BY hour, minute, no', [],
         function (rs) {
             alarmlength = rs.rows.length
             alarmArray = [];
@@ -75,6 +75,7 @@ function createAlarmList() {
                 alarmObj.minute = rs.rows.item(i).minute;
                 alarmObj.amount = rs.rows.item(i).amount;
                 alarmObj.time = rs.rows.item(i).time;
+                alarmObj.notes = rs.rows.item(i).notes;
                 alarmObj.active = rs.rows.item(i).active;
                 alarmArray.push(alarmObj);
                 createAlarm(alarmObj);
@@ -103,12 +104,13 @@ function createAlarm(alarmObj) {
     }
 
     if (alarmObj.active == 'true') {
-        html += '<div class="checkalarm"><label class="switch"><input type="checkbox" checked=true><span class="slider round"></span></label></div></div>'
+        html += '<div class="checkAlarm"><label class="switch"><input type="checkbox" checked=true><span class="slider round"></span></label></div></div>'
     } else {
-        html += '<div class="checkalarm"><label class="switch"><input type="checkbox"><span class="slider round"></span></label></div></div>'
+        html += '<div class="checkAlarm"><label class="switch"><input type="checkbox"><span class="slider round"></span></label></div></div>'
     }
 
-    $('.div-alarmlist').append(html)
+
+    $('.div-alarmList').append(html)
 
     if (alarmObj.active == 'true') {
         initAlarm(alarmObj.no)
@@ -118,7 +120,7 @@ function createAlarm(alarmObj) {
 function importAlarm(alarmArray) {
     alarmArray.forEach((alarmObj, index) => {
         db.sqlBatch([
-            ['INSERT INTO Alarm VALUES (?,?,?,?,?,?,?,?)', [index, alarmObj.name, alarmObj.hour, alarmObj.minute, alarmObj.amount, alarmObj.time, '', true]],
+            ['INSERT INTO Alarm VALUES (?,?,?,?,?,?,?,?,?)', [index, alarmObj.name, alarmObj.hour, alarmObj.minute, alarmObj.amount, alarmObj.time, alarmObj.notes, '', true]],
         ], function () {
             console.log('SQL batch ERROR: ' + error.message);
         }, function (error) {
@@ -128,7 +130,7 @@ function importAlarm(alarmArray) {
 }
 
 function initAlarm(no) {
-    db.executeSql('SELECT no AS no, name AS name, hour AS hour, minute AS minute, amount AS amount, time AS time, sound AS sound FROM Alarm WHERE no = ' + no, [],
+    db.executeSql('SELECT no AS no, name AS name, hour AS hour, minute AS minute, amount AS amount, time AS time,notes as notes, sound AS sound FROM Alarm WHERE no = ' + no, [],
         function (rs) {
             var d = new Date()
             var name = rs.rows.item(0).name
@@ -136,6 +138,7 @@ function initAlarm(no) {
             var minute = parseInt(rs.rows.item(0).minute)
             var amount = rs.rows.item(0).amount
             var time = rs.rows.item(0).time
+            var notes = rs.rows.item(0).notes
             var sound = rs.rows.item(0).sound
             sound = 'file://sounds/alert.mp3'
             if (hour < d.getHours()) {
@@ -277,7 +280,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         initUserProfile(displayName.toString());
     } else {
         console.log('logout')
-        $('#mainheader').show()
+        $('#mainHeader').show()
         $('#login').show("slide", { direction: "right" }, 500);
     }
 });
@@ -293,7 +296,7 @@ function initUserProfile(displayName) {
             dateofbirth = snapshot.child("dateofbirth").val()
             gender = snapshot.child("gender").val()
             if (snapshot.child("alarmList").val()) {
-                $('.div-alarmlist').empty()
+                $('.div-alarmList').empty()
                 alarmList = snapshot.child("alarmList").val();
                 db.sqlBatch([
                     ['DROP TABLE IF EXISTS Alarm'],
@@ -306,10 +309,10 @@ function initUserProfile(displayName) {
                 });
             }
 
-            $('.myname').text("Username    :  "+username)
-            $('.myemail').text("Email      :  "+email)
-            $('.mydateofbirth').text("Birth Date  :  "+dateofbirth)
-      
+            $('.myName').text("Username    :  "+username)
+            $('.myEmail').text("Email      :  "+email)
+            $('.myDateOfBirth').text("Birth Date  :  "+dateofbirth)
+
 
             if (gender == 'ชาย') {
                 $('.gender').text("Gender  : Male")

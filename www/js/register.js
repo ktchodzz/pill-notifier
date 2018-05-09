@@ -1,17 +1,17 @@
 var register = false
 
-$('#registerbtn').on('click', function () {
+$('#registerButton').on('click', function () {
     $('#login').hide("slide", { direction: "left" }, 500, function () {
         $('#register').show()
-        $('#mainheader').hide()
+        $('#mainHeader').hide()
     });
 })
 
-$('#registerconfirm').on('click', function () {
+$('#registerConfirm').on('click', function () {
     username = $('#username').val().replace(/\s/g, '')
     email = $('#email').val().replace(/\s/g, '')
     password = $('#password').val().replace(/\s/g, '')
-    confirmpassword = $('#confirmpassword').val().replace(/\s/g, '')
+    confirmPassword = $('#confirmPassword').val().replace(/\s/g, '')
     dateofbirth = $('#day').val() + '/' + $('#month').val() + '/' + $('#year').val()
     gender = $('#gender').val()
     checkUsername(username)
@@ -24,10 +24,10 @@ function checkUsername(username) {
         if (check) {
             alert('มีชื่อผู้ใช้นี้อยู่ในระบบแล้ว')
         } else {
-            if (password != confirmpassword) {
+            if (password != confirmPassword) {
                 alert('รหัสผ่านไม่ตรงกัน')
             } else {
-                $('#mainheader').hide()
+                $('#mainHeader').hide()
                 $('#register').hide("slide", { direction: "left" }, 500, function () {
                     registerUser();
                 });

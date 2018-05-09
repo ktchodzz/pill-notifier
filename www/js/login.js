@@ -1,6 +1,6 @@
 $('#login .login').on('click', function () {
-    email = $('#loginemail').val()
-    password = $('#loginpassword').val()
+    email = $('#loginEmail').val()
+    password = $('#loginPassword').val()
     firebase.auth()
         .signInWithEmailAndPassword(email.toString(), password.toString())
         .catch(function (error) {
@@ -14,10 +14,10 @@ $('.logout').on('click', function () {
     $('#homebtn').click()
     $('#mainlayout').hide()
     $('#login').show()
-    $('#mainheader').show()
+    $('#mainHeader').show()
 })
 
-$('#logoutbtn').on('click', function () {
+$('#logoutButton').on('click', function () {
     firebase.auth().signOut().then(function () {
         // Sign-out successful.
         dropAndRecreateAlarmDatabase();
@@ -25,8 +25,8 @@ $('#logoutbtn').on('click', function () {
         // An error happened.
         console.log('ERROR: ' + error.message);
     });
-    $('.div-alarmlist').empty();
-    $('#alarmbtn').click();
+    $('.div-alarmList').empty();
+    $('#alarmButton').click();
     $('#setting').hide();
     $('#profile').hide();
     $('#mainlayout').hide();

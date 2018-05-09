@@ -1,18 +1,18 @@
-$('#editalarmcancel').on('click', function () {
+$('#editAlarmCancel').on('click', function () {
     $('#editalarm').hide()
     $('#mainlayout').show()
 })
 
-$('#editalarmconfirm').on('click', function () {
+$('#editAlarmConfirm').on('click', function () {
     onEditAlarmConfirm(storage.getItem('currentno'))
 })
 
-$('#addalarmcancel').on('click', function () {
+$('#addAlarmCancel').on('click', function () {
     $('#addalarm').hide()
     $('#mainlayout').show()
 })
 
-$('#addalarmconfirm').on('click', function () {
+$('#addAlarmConfirm').on('click', function () {
     addAlarm()
 })
 
@@ -29,7 +29,7 @@ $('#alert').on('click', function () {
     });
 })
 
-$('.div-alarmlist').on('change', 'input[type="checkbox"]', function () {
+$('.div-alarmList').on('change', 'input[type="checkbox"]', function () {
     var no = $(this).parent().parent().parent().attr('id')
     if ($(this).prop('checked')) {
         editActiveAlarm(no, true)
@@ -38,15 +38,15 @@ $('.div-alarmlist').on('change', 'input[type="checkbox"]', function () {
     }
 })
 
-$('#deletealarm').on('click', function () {
-    $('#modal-deletealarm').modal()
+$('#deleteAlarm').on('click', function () {
+    $('#modal-deleteAlarm').modal()
 })
 
-$('#canceldelete').on('click', function () {
+$('#cancelDelete').on('click', function () {
     $('.modal').modal('hide')
 })
 
-$('#confirmdelete').on('click', function () {
+$('#confirmDelete').on('click', function () {
     $('.modal').modal('hide')
     deleteAlarm(storage.getItem('currentno'))
 })
@@ -54,11 +54,12 @@ $('#confirmdelete').on('click', function () {
 function addAlarm() {
     var hour = $('#addalarm .timepicker').val().split(':')[0]
     var minute = $('#addalarm .timepicker').val().split(':')[1]
-    var name = $('#addalarm #pillname').val();
-    var amount = $('#addalarm #pillamount').val()
-    var time = $("#addalarm input[name='wheneat']:checked").val()
+    var name = $('#addalarm #pillName').val();
+    var amount = $('#addalarm #pillAmount').val();
+    var time = $("#addalarm input[name='eatTime']:checked").val()
+    var notes = $("#addalarm #pillNotes").val();
     db.sqlBatch([
-        ['INSERT INTO Alarm VALUES (?,?,?,?,?,?,?,?)', [alarmlength + 1, name, hour, minute, amount, time, '', true]],
+        ['INSERT INTO Alarm VALUES (?,?,?,?,?,?,?,?,?)', [alarmlength + 1, name, hour, minute, amount, time, notes, '', true]],
     ], function () {
         createAlarmList()
         $('#addalarm').hide()
@@ -100,11 +101,12 @@ function deleteAlarm(no) {
 function onEditAlarmConfirm(no) {
     var hour = $('#editalarm .timepicker').val().split(':')[0]
     var minute = $('#editalarm .timepicker').val().split(':')[1]
-    var name = $('#editalarm #pillname').val();
-    var amount = $('#editalarm #pillamount').val()
-    var time = $("#editalarm input[name='wheneat']:checked").val()
+    var name = $('#editalarm #pillName').val();
+    var amount = $('#editalarm #pillAmount').val()
+    var time = $("#editalarm input[name='eatTime']:checked").val()
+    var notes = $('#editalarm #pillNotes').val()
     db.sqlBatch([
-        ['UPDATE Alarm SET name = ?, hour = ?, minute = ?, amount = ?, time = ?, active = ? WHERE no = ' + no, [name, hour, minute, amount, time, true]],
+        ['UPDATE Alarm SET name = ?, hour = ?, minute = ?, amount = ?, time = ?, notes = ?, active = ? WHERE no = ' + no, [name, hour, minute, amount, time, notes, true]],
     ], function () {
         console.log('finish')
         createAlarmList()
