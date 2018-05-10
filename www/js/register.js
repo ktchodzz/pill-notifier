@@ -12,9 +12,13 @@ $('#registerConfirm').on('click', function () {
     email = $('#email').val().replace(/\s/g, '')
     password = $('#password').val().replace(/\s/g, '')
     confirmPassword = $('#confirmPassword').val().replace(/\s/g, '')
-    dateofbirth = $('#day').val() + '/' + $('#month').val() + '/' + $('#year').val()
+    dateofbirth = $('#dateOfBirth').val().toString()
     gender = $('#gender').val()
-    checkUsername(username)
+    if (!username || !email || !password || !confirmPassword || !dateofbirth || !gender) {
+        alert('กรุณากรอกข้อมูลให้ครบถ้วน')
+    } else {
+        checkUsername(username)
+    }
 })
 
 function checkUsername(username) {
